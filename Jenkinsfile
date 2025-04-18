@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     environment{
-        VENV_DIR='venv  '
+        VENV_DIR='venv'
     }
 
     stages{
@@ -14,13 +14,23 @@ pipeline{
                 }
             }
         }
+
+        stage('Install venv support'){
+            steps {
+                echo "Installing python3-venv..."
+                sh '''
+                apt-get update 
+                apt-get install -y python3-venv
+                '''
+            }
+        }
         
         stage('Setting up our Virutual Environment and Installing dependencies'){
             steps{
                 script{
                     echo 'Setting up our Virtual Environment and Installing dependencies..................'
                     sh '''
-                    python3 -m venv ${VENV_DIR} 
+                    python -m venv ${VENV_DIR} 
                     . ${VENV_DIR}/bin/activate
                     pip install --upgrade pip
                     pip instll -e .
