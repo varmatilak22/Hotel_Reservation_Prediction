@@ -36,6 +36,7 @@ class ModelTraining:
 
             X_test=test_df.drop(columns=['booking_status'])
             y_test=test_df['booking_status']
+            print("X_train",X_train.shape,X_train.columns);
 
             logger.info("Data Spliited Successfully for model training")
 
