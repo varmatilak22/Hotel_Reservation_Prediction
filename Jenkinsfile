@@ -1,7 +1,5 @@
 pipeline{
-    agent{
-        docker{image 'python:3.11-slim'}
-    }
+    agent any
 
     environment{
         VENV_DIR='venv'
@@ -16,9 +14,7 @@ pipeline{
                 }
             }
         }
-
-       
-        
+           
         stage('Setting up our Virutual Environment and Installing dependencies'){
             steps{
                 script{
