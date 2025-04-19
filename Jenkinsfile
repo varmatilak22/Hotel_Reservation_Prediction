@@ -15,15 +15,7 @@ pipeline{
             }
         }
 
-        stage('Install venv support'){
-            steps {
-                echo "Installing python3-venv..."
-                sh '''
-                apt-get update 
-                apt-get install -y python3-venv
-                '''
-            }
-        }
+       
         
         stage('Setting up our Virutual Environment and Installing dependencies'){
             steps{
@@ -33,7 +25,7 @@ pipeline{
                     python -m venv ${VENV_DIR} 
                     . ${VENV_DIR}/bin/activate
                     pip install --upgrade pip
-                    pip instll -e .
+                    pip install -e .
                     '''
                 }
             }
