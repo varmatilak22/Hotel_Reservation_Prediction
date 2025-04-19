@@ -1,32 +1,36 @@
-pipeline {
-  agent any
-
-  environment {
-    VENV_DIR = 'venv'
-  }
-
-  stages {
-    stage('Checkout') {
-      steps {
-        checkout scm
-      }
+pipeline{
+    agent{
+        docker{image 'python:3.11-slim'}
     }
 
-    stage('Setup venv via virtualenv') {
-      steps {
-        sh '''
-          # Install virtualenv in your user space
-          python3 -m pip install --user virtualenv
-
-          # Create a venv (bundled pip/ensurepip)
-          python3 -m virtualenv ${VENV_DIR}
-
-          # Activate and install your package
-          . ${VENV_DIR}/bin/activate
-          pip install --upgrade pip
-          pip install -e .
-        '''
-      }
+    environment{
+        VENV_DIR='venv'
     }
-  }
+
+    stages{
+        stage('Cloning Github Repo to Jenkins'){
+            steps{
+                script{
+                    echo 'Cloning Github Repo to Jenkins..................'
+                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-token', url: 'https://github.com/varmatilak22/Hotel_Reservation_Prediction.git']])
+                }
+            }
+        }
+
+       
+        
+        stage('Setting up our Virutual Environment and Installing dependencies'){
+            steps{
+                script{
+                    echo 'Setting up our Virtual Environment and Installing dependencies..................'
+                    sh '''
+                    python -m venv ${VENV_DIR} 
+                    . ${VENV_DIR}/bin/activate
+                    pip install --upgrade pip
+                    pip install -e .
+                    '''
+                }
+            }
+        }
+    }
 }
