@@ -1,11 +1,10 @@
 pipeline{
     agent any
-    /*
+    
     environment{
         VENV_DIR='venv'
     }
-    */
-
+    
     stages{
         stage('Cloning Github Repo to Jenkins'){
             steps{
@@ -15,7 +14,6 @@ pipeline{
                 }
             }
         }
-        /*   
         stage('Setting up our Virutual Environment and Installing dependencies'){
             steps{
                 script{
@@ -28,6 +26,6 @@ pipeline{
                     '''
                 }
             }
-        }*/
+        }
     }
 }
