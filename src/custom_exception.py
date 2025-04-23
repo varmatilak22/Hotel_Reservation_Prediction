@@ -9,7 +9,7 @@ class CustomException(Exception):
     
     @staticmethod
     def get_detailed_error_msg(error_msg):
-        _,_,exc_tb=sys.exc_info()
+        _,_,exc_tb=traceback.sys.exc_info()
         file_name=exc_tb.tb_frame.f_code.co_filename
         line_number=exc_tb.tb_lineno # type: ignore
         return f"Error in {file_name},line {line_number} : {error_msg}"
