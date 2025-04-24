@@ -21,7 +21,7 @@ RUN pip install --no-cache-dir -e .
 RUN python pipeline/training_pipeline.py
 
 ### Front end route like Flask default route 
-EXPOSE 8080
+EXPOSE 8080 
 
 CMD ["python","application.py"]
 
