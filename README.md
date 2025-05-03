@@ -1,6 +1,3 @@
-# Creating the updated README content for the LightGBM-based model
-
-readme_content = """
 # 🏨 Hotel Reservation Prediction - End-to-End ML Project
 
 This project predicts whether a hotel reservation will be honored or not using a Machine Learning pipeline. The system is built with modular components and leverages **MLflow**, **Jenkins**, **Docker**, **GCP**, and **Kubernetes** to automate CI/CD for robust deployment and scalability.
