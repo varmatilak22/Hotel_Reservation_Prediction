@@ -6,13 +6,12 @@ This project predicts whether a hotel reservation will be cancelled or not using
 
 ## 📌 Tech Stack & Tools
 
-- **Languages:** Python, SQL
+- **Languages:** Python,SQL
 - **Data Science:** Pandas, NumPy, Scikit-learn, LightGBM, Jupyter
 - **Experiment Tracking:** MLflow
 - **Orchestration:** Jenkins, Docker, Kubernetes
-- **Cloud:** Google Cloud Platform (GCP - GCS, GKE, BigQuery)
-- **Versioning:** Git, DVC
-- **App Framework:** Streamlit / FastAPI
+- **Cloud:** Google Cloud Platform (GCP - GCS, )
+- **Versioning:** Git
 
 ---
 
