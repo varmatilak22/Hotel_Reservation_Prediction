@@ -1,6 +1,6 @@
 # 🏨 Hotel Reservation Prediction - End-to-End ML Project
 
-This project predicts whether a hotel reservation will be honored or not using a Machine Learning pipeline. The system is built with modular components and leverages **MLflow**, **Jenkins**, **Docker**, **GCP**, and **Kubernetes** to automate CI/CD for robust deployment and scalability.
+This project predicts whether a hotel reservation will be cancelled or not using a Machine Learning pipeline. The system is built with modular components and leverages **MLflow**, **Jenkins**, **Docker**, **GCP**, and **Kubernetes** to automate CI/CD for robust deployment and scalability.
 
 ---
 
